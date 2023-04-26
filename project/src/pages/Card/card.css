@@ -1,0 +1,246 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.container {
+  margin: 3rem;
+}
+
+.card-body {
+  display: flex;
+  margin: auto;
+  width: min(900px, 90vw);
+  height: min(500px, 90vh);
+  background-color: #4c7a56;
+  -webkit-mask: radial-gradient(
+      circle at left top,
+      transparent 70px,
+      black 71px
+    ),
+    radial-gradient(circle at right top, transparent 70px, black 71px),
+    radial-gradient(circle at left bottom, transparent 70px, black 71px),
+    radial-gradient(circle at right bottom, transparent 70px, black 71px),
+    linear-gradient(black, black);
+  -webkit-mask-composite: destination-in;
+  mask-composite: exclude;
+}
+
+.qrCode-container {
+  height: min(500px, 100%);
+  width: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qrCode {
+  margin-left: -175px;
+  border: white solid 4px;
+  border-radius: 8px;
+}
+
+h1,
+.birth-date,
+.student-name {
+  color: #f7f7f7;
+  text-align: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  height: 90%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 14rem;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.avatar {
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+
+.student-name {
+  font-size: clamp(2rem, 10vh, 0.5rem);
+}
+
+.vertical-line {
+  width: 1px;
+  height: 100%;
+  border-left: dashed 5px #214528;
+  position: relative;
+  right: 172px;
+  top: 0;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  justify-self: center;
+  margin-right: -140px;
+  margin-top: 190px;
+  margin-bottom: 190px;
+}
+
+.logo-container {
+  display: flex;
+  width: 20px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.authorized {
+  display: flex;
+  width: min(25rem, 60%);
+  height: 4rem;
+  background-color: #214528;
+  border-radius: 1rem;
+  color: #f7f7f7;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-authorized {
+  display: flex;
+  width: min(25rem, 75%);
+  height: 4rem;
+  background-color: #bf0d3e;
+  border-radius: 1rem;
+  color: #f7f7f7;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  width: max-content;
+  height: max-content;
+  font-weight: bold;
+}
+
+@media (max-width: 830px) and (orientation: landscape) {
+  h1 {
+    width: 200px;
+  }
+}
+
+@media (max-width: 720px) and (orientation: landscape) {
+  .vertical-line {
+    display: none;
+  }
+}
+
+@media (max-height: 420px) and (orientation: landscape) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  .card-content {
+    justify-content: center;
+  }
+  .authorized,
+  .not-authorized {
+    width: fit-content;
+    padding: 4px 2rem;
+    margin-top: 4px;
+  }
+}
+
+@media (orientation: portrait) and (max-height: 840px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  .card-content {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (orientation: portrait) {
+  .card-body {
+    flex-direction: column;
+    width: min(600px, 90vw);
+    height: min(900px, 95vh);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .avatar {
+    height: min(120px, 25vw);
+    width: min(120px, 25vw);
+    margin-bottom: 8px;
+  }
+  .card-content {
+    margin-bottom: 1rem;
+  }
+  .vertical-line {
+    height: 1px;
+    width: 100%;
+    border-top: dashed 5px #214528;
+    position: relative;
+    right: 0;
+    top: 0px;
+  }
+  .logo-container {
+    width: 100%;
+    height: min(160px, 17dvh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo {
+    width: min(120px, 14dvh);
+    height: min(120px, 14dvh);
+    justify-self: center;
+    margin: auto;
+  }
+  .qrCode-container {
+    height: 160px;
+    width: min(600px, 90vw);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 15px;
+  }
+  .qrCode {
+    margin: auto;
+  }
+  .userContent {
+    height: 9rem;
+  }
+  .authorized,
+  .not-authorized {
+    width: fit-content;
+    padding: 0 4rem;
+  }
+}
+
+@media (orientation: portrait) and (max-height: 730px) {
+  .logo-container {
+    display: none;
+  }
+  h1 {
+    margin-top: 35px;
+  }
+}
